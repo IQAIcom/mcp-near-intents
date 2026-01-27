@@ -1,25 +1,25 @@
-# NEAR Intents MCP Server
+# 🔗 NEAR Intents MCP Server
 
 [![npm version](https://img.shields.io/npm/v/@iqai/mcp-near-intents.svg)](https://www.npmjs.com/package/@iqai/mcp-near-intents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+## 📖 Overview
 
-The NEAR Intents MCP Server enables AI agents to perform cross-chain token swaps through NEAR's intent-based architecture using the [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript). This server provides comprehensive access to token discovery, swap quotes, execution, and status tracking.
+The NEAR Intents MCP Server enables AI agents to perform cross-chain token swaps through NEAR's intent-based architecture using the [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript). This server provides a comprehensive 5-step flow for discovering tokens, getting quotes, executing swaps, and tracking their status.
 
-By implementing the Model Context Protocol (MCP), this server allows Large Language Models (LLMs) to discover available tokens, get swap quotes, execute cross-chain swaps, and monitor transaction status directly through their context window, bridging the gap between AI and decentralized cross-chain trading.
+By implementing the Model Context Protocol (MCP), this server allows Large Language Models (LLMs) to facilitate cross-chain swaps seamlessly, bridging the gap between AI assistants and decentralized cross-chain infrastructure.
 
-## Features
+## ✨ Features
 
-- **Token Discovery**: Discover available tokens for swaps with metadata including blockchain, contract address, and current USD price.
-- **Simple Quotes**: Get basic swap quotes without requiring addresses - perfect for checking rates before committing.
-- **Full Quotes**: Get complete quotes with deposit addresses for actual swap execution.
-- **Swap Execution**: Execute swaps by submitting deposit transaction hashes.
-- **Status Tracking**: Monitor swap progress and execution status in real-time.
+*   **Token Discovery**: Discover available tokens across multiple blockchains supported by the Defuse Protocol.
+*   **Simple Quotes**: Get basic swap quotes without requiring addresses - perfect for rate checking.
+*   **Full Quotes**: Get complete quotes with deposit addresses for executing swaps.
+*   **Swap Execution**: Submit deposit transaction hashes to execute cross-chain swaps.
+*   **Status Tracking**: Monitor swap progress and completion status in real-time.
 
-## Installation
+## 📦 Installation
 
-### Using npx (Recommended)
+### 🚀 Using npx (Recommended)
 
 To use this server without installing it globally:
 
@@ -27,7 +27,7 @@ To use this server without installing it globally:
 npx @iqai/mcp-near-intents
 ```
 
-### Build from Source
+### 🔧 Build from Source
 
 ```bash
 git clone https://github.com/IQAIcom/mcp-near-intents.git
@@ -36,11 +36,11 @@ pnpm install
 pnpm run build
 ```
 
-## Running with an MCP Client
+## ⚡ Running with an MCP Client
 
 Add the following configuration to your MCP client settings (e.g., `claude_desktop_config.json`).
 
-### Minimal Configuration
+### 📋 Minimal Configuration
 
 ```json
 {
@@ -56,7 +56,7 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 }
 ```
 
-### Advanced Configuration (Local Build)
+### ⚙️ Advanced Configuration (Local Build)
 
 ```json
 {
@@ -73,36 +73,36 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 }
 ```
 
-## Configuration (Environment Variables)
+## 🔐 Configuration (Environment Variables)
 
 | Variable | Required | Description | Default |
 | :--- | :--- | :--- | :--- |
-| `NEAR_SWAP_JWT_TOKEN` | Yes | JWT token for Defuse Protocol authentication | - |
-| `NEAR_SWAP_API_URL` | No | Custom API endpoint for Defuse Protocol | `https://1click.chaindefuser.com` |
+| `NEAR_SWAP_JWT_TOKEN` | Yes | JWT token for Defuse Protocol API authentication | - |
+| `NEAR_SWAP_API_URL` | No | Custom API endpoint | `https://1click.chaindefuser.com` |
 
-## Usage Examples
+## 💡 Usage Examples
 
-### Token Discovery
-- "What tokens are available for swaps on NEAR Intents?"
-- "Show me all supported tokens I can swap."
-- "Find the token ID for USDC on Arbitrum."
+### 🔍 Token Discovery
+*   "What tokens are available for cross-chain swaps on NEAR?"
+*   "Show me all supported tokens in the Defuse Protocol."
+*   "List available tokens I can swap from Arbitrum to Solana."
 
-### Getting Quotes
-- "What's the current rate to swap 100 USDC from Arbitrum to SOL?"
-- "Get me a quote for swapping ETH to NEAR."
-- "Check the slippage for a 1000 USDC swap."
+### 📊 Getting Quotes
+*   "What's the rate to swap 100 USDC from Arbitrum to SOL?"
+*   "Get me a quote for swapping ETH to USDC on NEAR."
+*   "How much SOL would I get for 1000 USDC?"
 
-### Executing Swaps
-- "I want to swap 50 USDC from Arbitrum to Solana."
-- "Get a full quote with deposit address for my swap."
-- "Submit my deposit transaction hash to execute the swap."
+### 💱 Executing Swaps
+*   "I want to swap 500 USDC from Arbitrum to Solana."
+*   "Help me execute a cross-chain swap with this deposit address."
+*   "I've sent the funds to the deposit address, here's my transaction hash."
 
-### Monitoring Swaps
-- "Check the status of my pending swap."
-- "Is my cross-chain swap complete?"
-- "What's the current state of my transaction?"
+### 📈 Tracking Status
+*   "Check the status of my swap with deposit address 0xabc..."
+*   "Is my cross-chain swap complete?"
+*   "What's the current state of my pending swap?"
 
-## MCP Tools
+## 🛠️ MCP Tools
 
 <!-- AUTO-GENERATED TOOLS START -->
 
@@ -137,7 +137,7 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 | `slippageTolerance` | number |  | 100 | (Optional, defaults to 100) Slippage tolerance for the swap. This value is in basis points (1/100th of a percent), e.g. 100 for 1% slippage. |
 | `dry` | boolean |  | false | (Optional, defaults to false) Flag indicating whether this is a dry run request. If true, the response will NOT contain the following fields: depositAddress, timeWhenInactive, deadline. |
 | `depositType` | string |  | "ORIGIN_CHAIN" | (Optional, defaults to ORIGIN_CHAIN) Type of the deposit address: ORIGIN_CHAIN - deposit address on the origin chain, INTENTS - account ID inside near intents to which you should transfer assets inside intents |
-| `deadline` | string |  | "2026-01-27T22:42:08.273Z" | (Optional, defaults to 1 hour from now) Timestamp in ISO format, that identifies when user refund will begin if the swap isn't completed by then. It needs to exceed the time required for the deposit tx to be minted, e.g. for Bitcoin it might require ~1h depending on the gas fees paid. |
+| `deadline` | string |  |  | (Optional, defaults to 1 hour from now) Timestamp in ISO format, that identifies when user refund will begin if the swap isn't completed by then. It needs to exceed the time required for the deposit tx to be minted, e.g. for Bitcoin it might require ~1h depending on the gas fees paid. |
 | `referral` | string |  |  | (Optional) Referral identifier (lower case only). It will be reflected in the on-chain data and displayed on public analytics platforms. |
 | `quoteWaitingTimeMs` | number |  | 3000 | (Optional, defaults to 3000) Time in milliseconds user is willing to wait for quote from relay |
 
@@ -160,51 +160,40 @@ _No parameters_
 
 <!-- AUTO-GENERATED TOOLS END -->
 
-## Development
+## 👨‍💻 Development
 
-### Build Project
+### 🏗️ Build Project
 ```bash
 pnpm run build
 ```
 
-### Development Mode (Watch)
+### 👁️ Development Mode (Watch)
 ```bash
 pnpm run watch
 ```
 
-### Linting & Formatting
+### ✅ Linting & Formatting
 ```bash
 pnpm run lint
 pnpm run format
 ```
 
-### Project Structure
-- `src/tools/`: Individual tool definitions
-- `src/services/`: API client and business logic
-- `src/lib/`: Shared utilities
-- `src/index.ts`: Server entry point
+### 📁 Project Structure
+*   `src/tools/`: Individual tool definitions
+*   `src/services/`: API client and business logic
+*   `src/lib/`: Shared utilities
+*   `src/index.ts`: Server entry point
 
-## User Flow
+## 📚 Resources
 
-This server supports a complete 5-step user flow:
+*   [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript)
+*   [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
+*   [NEAR Protocol](https://near.org)
 
-1. **[DISCOVERY]** Use `GET_NEAR_SWAP_TOKENS` to discover available tokens
-2. **[STEP 1]** Use `GET_NEAR_SWAP_SIMPLE_QUOTE` to check swap rates without addresses
-3. **[STEP 2]** Use `GET_NEAR_SWAP_FULL_QUOTE` to get deposit address when ready to swap
-4. **[STEP 3]** User sends funds to the deposit address (external action)
-5. **[STEP 4]** Use `EXECUTE_NEAR_SWAP` to submit deposit transaction hash
-6. **[STEP 5]** Use `CHECK_NEAR_SWAP_STATUS` to monitor swap progress until completion
+## ⚠️ Disclaimer
 
-## Resources
+This project interacts with cross-chain swap infrastructure. Users should exercise caution and verify all transaction details before executing swaps. Cross-chain transactions involve multiple blockchains and carry inherent risks.
 
-- [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
-- [NEAR Protocol](https://near.org)
-
-## Disclaimer
-
-This project interacts with blockchain networks and cross-chain swap protocols. Users should exercise caution and verify all data independently. Cross-chain swaps involve risk and users are responsible for their own transactions.
-
-## License
+## 📄 License
 
 [MIT](LICENSE)
