@@ -137,7 +137,7 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 | `slippageTolerance` | number |  | 100 | (Optional, defaults to 100) Slippage tolerance for the swap. This value is in basis points (1/100th of a percent), e.g. 100 for 1% slippage. |
 | `dry` | boolean |  | false | (Optional, defaults to false) Flag indicating whether this is a dry run request. If true, the response will NOT contain the following fields: depositAddress, timeWhenInactive, deadline. |
 | `depositType` | string |  | "ORIGIN_CHAIN" | (Optional, defaults to ORIGIN_CHAIN) Type of the deposit address: ORIGIN_CHAIN - deposit address on the origin chain, INTENTS - account ID inside near intents to which you should transfer assets inside intents |
-| `deadline` | string |  |  | (Optional, defaults to 1 hour from now) Timestamp in ISO format, that identifies when user refund will begin if the swap isn't completed by then. It needs to exceed the time required for the deposit tx to be minted, e.g. for Bitcoin it might require ~1h depending on the gas fees paid. |
+| `deadline` | string |  | "2026-01-27T22:48:02.042Z" | (Optional, defaults to 1 hour from now) Timestamp in ISO format, that identifies when user refund will begin if the swap isn't completed by then. It needs to exceed the time required for the deposit tx to be minted, e.g. for Bitcoin it might require ~1h depending on the gas fees paid. |
 | `referral` | string |  |  | (Optional) Referral identifier (lower case only). It will be reflected in the on-chain data and displayed on public analytics platforms. |
 | `quoteWaitingTimeMs` | number |  | 3000 | (Optional, defaults to 3000) Time in milliseconds user is willing to wait for quote from relay |
 
