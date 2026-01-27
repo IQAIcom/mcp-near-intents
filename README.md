@@ -1,11 +1,11 @@
-# 🔗 NEAR Intents MCP Server
+# 🔗 NEAR Intent Swaps MCP Server
 
-[![npm version](https://img.shields.io/npm/v/@iqai/mcp-near-intents.svg)](https://www.npmjs.com/package/@iqai/mcp-near-intents)
+[![npm version](https://img.shields.io/npm/v/@iqai/mcp-near-intent-swaps.svg)](https://www.npmjs.com/package/@iqai/mcp-near-intent-swaps)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 📖 Overview
 
-The NEAR Intents MCP Server enables AI agents to perform cross-chain token swaps through NEAR's intent-based architecture using the [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript). This server provides a comprehensive 5-step flow for discovering tokens, getting quotes, executing swaps, and tracking their status.
+The NEAR Intent Swaps MCP Server enables AI agents to perform cross-chain token swaps through NEAR's intent-based architecture using the [Defuse Protocol one-click SDK](https://github.com/defuse-protocol/one-click-sdk-typescript). This server provides a comprehensive 5-step flow for discovering tokens, getting quotes, executing swaps, and tracking their status.
 
 By implementing the Model Context Protocol (MCP), this server allows Large Language Models (LLMs) to facilitate cross-chain swaps seamlessly, bridging the gap between AI assistants and decentralized cross-chain infrastructure.
 
@@ -24,14 +24,14 @@ By implementing the Model Context Protocol (MCP), this server allows Large Langu
 To use this server without installing it globally:
 
 ```bash
-npx @iqai/mcp-near-intents
+npx @iqai/mcp-near-intent-swaps
 ```
 
 ### 🔧 Build from Source
 
 ```bash
-git clone https://github.com/IQAIcom/mcp-near-intents.git
-cd mcp-near-intents
+git clone https://github.com/IQAIcom/mcp-near-intent-swaps.git
+cd mcp-near-intent-swaps
 pnpm install
 pnpm run build
 ```
@@ -45,9 +45,9 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 ```json
 {
   "mcpServers": {
-    "near-intents": {
+    "near-intent-swaps": {
       "command": "npx",
-      "args": ["-y", "@iqai/mcp-near-intents"],
+      "args": ["-y", "@iqai/mcp-near-intent-swaps"],
       "env": {
         "NEAR_SWAP_JWT_TOKEN": "your-jwt-token-here"
       }
@@ -61,9 +61,9 @@ Add the following configuration to your MCP client settings (e.g., `claude_deskt
 ```json
 {
   "mcpServers": {
-    "near-intents": {
+    "near-intent-swaps": {
       "command": "node",
-      "args": ["/absolute/path/to/mcp-near-intents/dist/index.js"],
+      "args": ["/absolute/path/to/mcp-near-intent-swaps/dist/index.js"],
       "env": {
         "NEAR_SWAP_JWT_TOKEN": "your-jwt-token-here",
         "NEAR_SWAP_API_URL": "https://1click.chaindefuser.com"
