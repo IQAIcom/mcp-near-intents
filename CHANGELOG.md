@@ -1,5 +1,11 @@
 # mcp-near-intent-swaps
 
+## 0.0.12
+
+### Patch Changes
+
+- 7355a5d: fastmcp dependecy upgrade to v3.32.0 for improved features and bug fixes.
+
 ## 0.0.11
 
 ### Patch Changes

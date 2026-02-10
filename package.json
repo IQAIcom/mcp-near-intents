@@ -1,13 +1,15 @@
 {
 	"name": "@iqai/mcp-near-intent-swaps",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"description": "An MCP server for NEAR intent swaps using the Defuse Protocol one-click SDK.",
 	"main": "dist/index.js",
 	"type": "module",
 	"bin": {
 		"mcp-near-intent-swaps": "dist/index.js"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsc && shx chmod +x dist/index.js",
 		"prepare": "husky",
