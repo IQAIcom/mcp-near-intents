@@ -30,7 +30,7 @@ npx @iqai/mcp-near-intent-swaps
 ### 🔧 Build from Source
 
 ```bash
-git clone https://github.com/IQAIcom/mcp-near-intent-swaps.git
+git clone https://github.com/IQOfficial/mcp-near-intent-swaps.git
 cd mcp-near-intent-swaps
 pnpm install
 pnpm run build
